@@ -3,8 +3,9 @@
 package parser
 
 import (
-    . "github.com/GoLangsam/sexpr/internal/ast"
-    "github.com/GoLangsam/sexpr/internal/token")
+	. "github.com/GoLangsam/sexpr/internal/ast"
+	"github.com/GoLangsam/sexpr/internal/token"
+)
 
 func getStr(v interface{}) string {
 	t := v.(*token.Token)
