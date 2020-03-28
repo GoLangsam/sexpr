@@ -6,7 +6,7 @@ import (
 	"bytes"
 	"fmt"
 
-	"github.com/awalterschulze/gominikanren/sexpr/token"
+	"github.com/GoLangsam/sexpr/internal/token"
 )
 
 type ErrorSymbol interface {

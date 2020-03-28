@@ -5,7 +5,7 @@ package lexer
 import (
 	"fmt"
 
-	"github.com/awalterschulze/gominikanren/sexpr/token"
+	"github.com/GoLangsam/sexpr/internal/token"
 )
 
 type ActionTable [NumStates]ActionRow

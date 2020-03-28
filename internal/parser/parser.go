@@ -6,8 +6,8 @@ import (
 	"bytes"
 	"fmt"
 
-	parseError "github.com/awalterschulze/gominikanren/sexpr/errors"
-	"github.com/awalterschulze/gominikanren/sexpr/token"
+	parseError "github.com/GoLangsam/sexpr/internal/errors"
+	"github.com/GoLangsam/sexpr/internal/token"
 )
 
 const (
