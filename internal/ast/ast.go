@@ -10,8 +10,8 @@ func Cons(car *SExpr, cdr *SExpr) *SExpr {
 }
 
 type SExpr struct {
-	Pair *Pair
-	Atom *Atom
+	*Pair
+	*Atom
 }
 
 func (s *SExpr) Cdr() *SExpr {
@@ -29,8 +29,7 @@ func (s *SExpr) Car() *SExpr {
 }
 
 type Pair struct {
-	Car *SExpr
-	Cdr *SExpr
+	Car, Cdr *SExpr
 }
 
 func (s *SExpr) String() string {
