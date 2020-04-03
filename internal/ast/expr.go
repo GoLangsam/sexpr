@@ -25,3 +25,13 @@ func (p *Pair) Expr() *SExpr {
 		Pair: p,
 	}
 }
+
+// AsVariable reports whether the expression expresses nothing but a variable,
+// and if so, that variable is returned (or else: nil).
+func (s *SExpr) AsVariable() (v *Variable, isVariable bool) {
+	isVariable = s.IsVariable()
+	if isVariable {
+		v = s.Atom.Var
+	}
+	return
+}
