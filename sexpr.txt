@@ -1,0 +1,21 @@
+
+SExpr           : Atom
+                | Pair
+                ;
+
+Pair            : "(" ")"                           
+                | "(" SExpr ")"                     
+                | "(" SExpr space ContinueList ")"  
+                | "(" SExpr space "." space SExpr ")"  
+                ;
+
+ContinueList    : SExpr
+                | SExpr space ContinueList
+                ;
+
+Atom            : symbol
+                | int_lit
+                | float_lit
+                | string_lit
+                | variable
+                ;
