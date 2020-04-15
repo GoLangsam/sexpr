@@ -70,7 +70,7 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `Pair : "(" ")"	<< nil, nil >>`,
+		String: `Pair : "(" ")"	<< nil,                              nil >>`,
 		Id:         "Pair",
 		NTType:     2,
 		Index:      3,
@@ -80,7 +80,7 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `Pair : "(" SExpr ")"	<< Cons(getSExpr(X[1]), nil), nil >>`,
+		String: `Pair : "(" SExpr ")"	<< Cons(getSExpr(X[1]), nil),          nil >>`,
 		Id:         "Pair",
 		NTType:     2,
 		Index:      4,
@@ -110,7 +110,7 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `ContinueList : SExpr	<< Cons(getSExpr(X[0]), nil), nil >>`,
+		String: `ContinueList : SExpr	<< Cons(getSExpr(X[0]), nil),          nil >>`,
 		Id:         "ContinueList",
 		NTType:     3,
 		Index:      7,
@@ -130,7 +130,7 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `Atom : symbol	<< NewSymbol(getStr(X[0])), nil >>`,
+		String: `Atom : symbol	<< NewSymbol(    getStr(X[0])), nil >>`,
 		Id:         "Atom",
 		NTType:     4,
 		Index:      9,
@@ -140,7 +140,7 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `Atom : int_lit	<< ParseInt(getStr(X[0])) >>`,
+		String: `Atom : int_lit	<< ParseInt(     getStr(X[0])) >>`,
 		Id:         "Atom",
 		NTType:     4,
 		Index:      10,
@@ -150,7 +150,7 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `Atom : float_lit	<< ParseFloat(getStr(X[0])) >>`,
+		String: `Atom : float_lit	<< ParseFloat(   getStr(X[0])) >>`,
 		Id:         "Atom",
 		NTType:     4,
 		Index:      11,
@@ -160,7 +160,7 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `Atom : string_lit	<< ParseString(getStr(X[0])) >>`,
+		String: `Atom : string_lit	<< ParseString(  getStr(X[0])) >>`,
 		Id:         "Atom",
 		NTType:     4,
 		Index:      12,
