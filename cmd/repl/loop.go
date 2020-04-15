@@ -15,25 +15,27 @@ import (
 // ===========================================================================
 
 func doLoop() {
-	buf := make([]byte,1024) 
+	buf := make([]byte, 1024)
 
 	for {
 		n, err := os.Stdin.Read(buf)
-		if err!=nil {break}
-		
+		if err != nil {
+			break
+		}
+
 		// fmt.Println(by)
-		
+
 		//s := strings.Replace(string(buf[:n]), "\n", "", -1) // strip CrLf
 		s := string(buf[:n-2])
-		
+
 		fmt.Println(n)
 		//fmt.Println(s)
-		
+
 		ast, err := sexpr.Parse(s)
 		//if err == nil {
-			fmt.Println(ast.String())
+		fmt.Println(ast.String())
 		//} else {
-			fmt.Println(err)
+		fmt.Println(err)
 		//}
 	}
 }
