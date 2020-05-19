@@ -7,7 +7,6 @@ package main
 import (
 	"fmt"
 	"os"
-	//"strings"
 
 	"github.com/GoLangsam/sexpr"
 )
@@ -15,28 +14,19 @@ import (
 // ===========================================================================
 
 func doLoop() {
-	buf := make([]byte, 1024)
+	fmt.Println("REPL - Please enter some expression and press [Enter]")
+	defer fmt.Println("bye ...")
 
-	for {
-		n, err := os.Stdin.Read(buf)
-		if err != nil {
-			break
+	text := make([]byte, 2048)
+	next := func() (int, error) { return os.Stdin.Read(text) }
+
+	for n, err := next(); err == nil; n, err = next() {
+		line := string(text[:n-1]) // strip trailing CrLf
+		if ast, err := sexpr.Parse(line); err == nil {
+			fmt.Println(ast.String())
+		} else {
+			fmt.Println(err)
 		}
-
-		// fmt.Println(by)
-
-		//s := strings.Replace(string(buf[:n]), "\n", "", -1) // strip CrLf
-		s := string(buf[:n-2])
-
-		fmt.Println(n)
-		//fmt.Println(s)
-
-		ast, err := sexpr.Parse(s)
-		//if err == nil {
-		fmt.Println(ast.String())
-		//} else {
-		fmt.Println(err)
-		//}
 	}
 }
 
