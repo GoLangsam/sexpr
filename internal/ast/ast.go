@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-func Cons(car *SExpr, cdr *SExpr) *SExpr {
+func Cons(car, cdr *SExpr) *SExpr {
 	return &SExpr{Pair: &Pair{Car: car, Cdr: cdr}}
 }
 
